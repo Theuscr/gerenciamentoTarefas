@@ -7,10 +7,10 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Caminho para o arquivo JSON
+
 const DATA_FILE = path.join(__dirname, 'data', 'tasks.json');
 
-// Middleware
+
 app.use(cors()); 
 app.use(express.json());
 
@@ -31,14 +31,14 @@ function readTasks() {
 
 function writeTasks(tasks) {
     try {
-        // Salva os dados no arquivo tasks.json, formatando com indentação (2 espaços)
+        
         fs.writeFileSync(DATA_FILE, JSON.stringify(tasks, null, 2), 'utf8');
     } catch (error) {
         console.error("Erro ao escrever arquivo:", error);
     }
 }
 
-// Inicializa o contador baseado nos dados do arquivo
+
 let taskIdCounter = readTasks().reduce((max, task) => Math.max(max, task.id), 0) + 1;
 
 
@@ -67,7 +67,7 @@ app.post('/api/tasks', (req, res) => {
     };
 
     tasks.push(newTask);
-    writeTasks(tasks); // <--- AQUI SALVA NO ARQUIVO JSON
+    writeTasks(tasks); 
     res.status(201).json(newTask); 
 });
 
@@ -82,7 +82,7 @@ app.patch('/api/tasks/:id/toggle', (req, res) => {
 
     tasks[taskIndex].concluida = !tasks[taskIndex].concluida;
     
-    writeTasks(tasks); // <--- AQUI SALVA NO ARQUIVO JSON
+    writeTasks(tasks); 
     res.json(tasks[taskIndex]);
 });
 
@@ -97,11 +97,11 @@ app.delete('/api/tasks/:id', (req, res) => {
         return res.status(404).json({ message: 'Tarefa não encontrada para deleção.' });
     }
 
-    writeTasks(tasks); // <--- AQUI SALVA NO ARQUIVO JSON
+    writeTasks(tasks); 
     res.status(204).send(); 
 });
 
-// Inicialização do Servidor
+
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });
