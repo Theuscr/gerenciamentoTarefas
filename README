@@ -1,0 +1,46 @@
+# 📌 Gerenciador de Tarefas CRUD
+
+Um projeto Full-Stack simples para demonstrar a implementação completa de uma API RESTful (CRUD) com persistência de dados em arquivo.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+| Componente | Tecnologia | Finalidade |
+| :--- | :--- | :--- |
+| **Backend (API)** | Node.js, Express.js | Servidor HTTP e definição de rotas. |
+| **Persistência** | Módulo `fs` (File System) | Salvamento permanente dos dados no `tasks.json`. |
+| **Frontend** | HTML5, CSS3, JavaScript | Interface do usuário e comunicação com a API via `fetch()`. |
+
+---
+
+## 🎯 Funcionalidades Implementadas
+
+O projeto implementa o ciclo de vida completo de uma tarefa (CRUD):
+
+| Operação | Método HTTP | Rota da API | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Criar** | `POST` | `/api/tasks` | Adiciona uma nova tarefa à lista. |
+| **Ler** | `GET` | `/api/tasks` | Lista todas as tarefas salvas. |
+| **Atualizar** | `PATCH` | `/api/tasks/:id/toggle` | Alterna o status da tarefa entre Ativa/Concluída. |
+| **Deletar** | `DELETE` | `/api/tasks/:id` | Remove permanentemente a tarefa. |
+
+**Persistência de Dados:** O sistema utiliza o arquivo `backend/data/tasks.json` como um "banco de dados" simples, garantindo que as tarefas não sejam perdidas ao reiniciar o servidor.
+
+---
+
+## ⚙️ Como Rodar o Projeto Localmente
+
+Siga estes passos para configurar e executar a aplicação em sua máquina:
+
+### Pré-requisitos
+
+* [Node.js](https://nodejs.org/) instalado.
+
+### 1. Instalação das Dependências
+
+Abra o terminal na pasta `backend/` e instale os pacotes necessários (`express` e `cors`):
+
+```bash
+cd backend
+npm install
