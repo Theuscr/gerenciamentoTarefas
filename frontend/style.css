@@ -20,13 +20,13 @@ body {
     padding: 20px;
 }
 
-/* Header */
+
 .header { display: flex; align-items: center; margin-bottom: 30px; padding: 0 10px; }
 .header .icon { font-size: 2.5rem; color: var(--primary-color); margin-right: 15px; }
 .header h1 { font-size: 1.5rem; font-weight: 700; }
 .header p { font-size: 0.9rem; color: #6b7280; }
 
-/* Main Container */
+
 .container { display: flex; gap: 20px; max-width: 1200px; margin: 0 auto; }
 .card {
     background-color: var(--white);
@@ -39,7 +39,7 @@ body {
 .tasks-list-container { flex: 2; }
 .new-task-form-container h2 { font-size: 1.25rem; margin-bottom: 20px; font-weight: 600; }
 
-/* Formulário */
+
 #newTaskForm label { display: block; font-size: 0.85rem; font-weight: 500; color: #4b5563; margin-top: 15px; margin-bottom: 5px; }
 #newTaskForm input, #newTaskForm select { width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; }
 .form-group-inline { display: flex; gap: 15px; }
@@ -52,7 +52,7 @@ body {
 #addTaskButton:hover { background-color: #2563eb; }
 #addTaskButton i { margin-right: 8px; }
 
-/* Estatísticas */
+
 .stats-container {
     display: flex; justify-content: space-between; gap: 10px; margin-top: 30px;
     padding-top: 20px; border-top: 1px solid var(--border-color);
@@ -64,7 +64,7 @@ body {
 .stat-card:nth-child(3) .count { color: var(--completed-color); } /* Concluídas (Verde) */
 
 
-/* Abas de Filtro */
+
 .tabs { display: flex; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); }
 .tab-button {
     background-color: transparent; border: none; padding: 10px 15px; font-size: 1rem;
@@ -72,7 +72,7 @@ body {
 }
 .tab-button.active { color: var(--primary-color); border-bottom-color: var(--primary-color); font-weight: 600; }
 
-/* Lista de Tarefas (Itens) */
+
 .tasks-list { display: flex; flex-direction: column; gap: 15px; }
 .task-item {
     display: flex; align-items: center; background-color: var(--white); border: 1px solid var(--border-color);
