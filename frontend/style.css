@@ -1,0 +1,100 @@
+/* frontend/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #3b82f6; 
+    --secondary-color: #f3f4f6; 
+    --text-color: #1f2937; 
+    --white: #ffffff;
+    --border-color: #e5e7eb;
+    --completed-color: #10b981; 
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* Header */
+.header { display: flex; align-items: center; margin-bottom: 30px; padding: 0 10px; }
+.header .icon { font-size: 2.5rem; color: var(--primary-color); margin-right: 15px; }
+.header h1 { font-size: 1.5rem; font-weight: 700; }
+.header p { font-size: 0.9rem; color: #6b7280; }
+
+/* Main Container */
+.container { display: flex; gap: 20px; max-width: 1200px; margin: 0 auto; }
+.card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+
+.new-task-form-container { flex: 1; max-width: 400px; }
+.tasks-list-container { flex: 2; }
+.new-task-form-container h2 { font-size: 1.25rem; margin-bottom: 20px; font-weight: 600; }
+
+/* Formulário */
+#newTaskForm label { display: block; font-size: 0.85rem; font-weight: 500; color: #4b5563; margin-top: 15px; margin-bottom: 5px; }
+#newTaskForm input, #newTaskForm select { width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; }
+.form-group-inline { display: flex; gap: 15px; }
+.form-group-inline > div { flex: 1; }
+#addTaskButton {
+    background-color: var(--primary-color); color: var(--white); border: none;
+    padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 1rem;
+    font-weight: 600; margin-top: 25px; width: 100%; transition: background-color 0.2s;
+}
+#addTaskButton:hover { background-color: #2563eb; }
+#addTaskButton i { margin-right: 8px; }
+
+/* Estatísticas */
+.stats-container {
+    display: flex; justify-content: space-between; gap: 10px; margin-top: 30px;
+    padding-top: 20px; border-top: 1px solid var(--border-color);
+}
+.stat-card { background-color: var(--secondary-color); border-radius: 8px; padding: 10px; text-align: center; flex-grow: 1; }
+.stat-card .count { display: block; font-size: 1.5rem; font-weight: 700; }
+.stat-card .label { display: block; font-size: 0.8rem; color: #6b7280; margin-top: 2px; }
+.stat-card:nth-child(2) .count { color: #f97316; } /* Ativas (Laranja) */
+.stat-card:nth-child(3) .count { color: var(--completed-color); } /* Concluídas (Verde) */
+
+
+/* Abas de Filtro */
+.tabs { display: flex; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+.tab-button {
+    background-color: transparent; border: none; padding: 10px 15px; font-size: 1rem;
+    font-weight: 500; color: #6b7280; cursor: pointer; border-bottom: 3px solid transparent;
+}
+.tab-button.active { color: var(--primary-color); border-bottom-color: var(--primary-color); font-weight: 600; }
+
+/* Lista de Tarefas (Itens) */
+.tasks-list { display: flex; flex-direction: column; gap: 15px; }
+.task-item {
+    display: flex; align-items: center; background-color: var(--white); border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-color); 
+    padding: 15px; border-radius: 8px;
+}
+
+.task-item.priority-Alta { border-left-color: #ef4444; } 
+.task-item.priority-Moderada { border-left-color: #f59e0b; } 
+.task-item.priority-Baixa { border-left-color: #3b82f6; } 
+
+.task-item.completed { opacity: 0.7; border-left-color: var(--completed-color); text-decoration: line-through; }
+.task-checkbox { margin-right: 15px; min-width: 20px; min-height: 20px; cursor: pointer; accent-color: var(--completed-color); }
+.task-content { flex-grow: 1; }
+.task-content h4 { font-size: 1rem; font-weight: 500; margin-bottom: 5px; }
+.task-meta { font-size: 0.75rem; color: #6b7280; }
+.task-actions { margin-left: 20px; }
+.task-delete-btn { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1.1rem; opacity: 0.6; }
+.task-delete-btn:hover { opacity: 1; }
+
+/* Estado Vazio */
+.empty-state { text-align: center; padding: 50px 0; color: #9ca3af; }
+.empty-state .check-icon { font-size: 3rem; color: var(--primary-color); opacity: 0.3; margin-bottom: 10px; }
+.empty-state p { font-size: 1.2rem; font-weight: 500; margin-bottom: 5px; }
+.empty-state small { display: block; font-size: 0.9rem; }

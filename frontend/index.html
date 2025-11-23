@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <i class="fas fa-list-alt icon"></i>
+        <div>
+            <h1>Gerenciador de Tarefas</h1>
+            <p>Organize suas atividades e metas</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card new-task-form-container">
+            <h2>Nova Tarefa</h2>
+            <form id="newTaskForm">
+                <label for="atividade">Atividade</label>
+                <input type="text" id="atividade" placeholder="O que você precisa fazer?" required>
+
+                <div class="form-group-inline">
+                    <div>
+                        <label for="frequencia">Frequência</label>
+                        <select id="frequencia">
+                            <option value="Única">Única</option>
+                            <option value="Diária">Diária</option>
+                            <option value="Semanal">Semanal</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="prioridade">Prioridade</label>
+                        <select id="prioridade">
+                            <option value="Moderada">Moderada</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Baixa">Baixa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="prazo">Prazo</label>
+                <input type="date" id="prazo">
+                
+                <button type="submit" id="addTaskButton">
+                    <i class="fas fa-plus"></i> Adicionar Tarefa
+                </button>
+            </form>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span id="total-count" class="count">0</span>
+                    <span class="label">Total</span>
+                </div>
+                <div class="stat-card">
+                    <span id="active-count" class="count">0</span>
+                    <span class="label">Ativas</span>
+                </div>
+                <div class="stat-card">
+                    <span id="completed-count" class="count">0</span>
+                    <span class="label">Concluídas</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="tasks-list-container">
+            <div class="tabs">
+                <button class="tab-button active" data-filter="all">Todas</button>
+                <button class="tab-button" data-filter="active">Ativas</button>
+                <button class="tab-button" data-filter="completed">Concluídas</button>
+            </div>
+
+            <div id="tasks-list" class="tasks-list">
+                <div id="empty-state" class="empty-state">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <p>Nenhuma tarefa cadastrada</p>
+                    <small>Adicione sua primeira tarefa para começar!</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
