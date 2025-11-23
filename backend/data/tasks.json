@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "atividade": "Malhar",
+    "frequencia": "Diária",
+    "prioridade": "Alta",
+    "prazo": "2026-12-12",
+    "concluida": false
+  }
+]
